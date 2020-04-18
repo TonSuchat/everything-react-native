@@ -1,6 +1,7 @@
 import { apiServerURL } from "../configs";
 import { contentTypeJSONHeader } from "../utility";
 import { Contact } from "../store/contacts/types";
+import { ApiResponse } from "./types";
 
 export const getContactsApi = async () => {
   try {
@@ -13,20 +14,22 @@ export const getContactsApi = async () => {
   }
 };
 
-export const addContactApi = async (newContact: Contact) => {
+export const addContactApi = async (
+  newContact: Contact
+): Promise<ApiResponse> => {
   try {
     const response = await fetch(`${apiServerURL}/contacts`, {
       method: "POST",
       headers: contentTypeJSONHeader,
       body: JSON.stringify(newContact),
     });
+    const json = await response.json();
     if (response.ok) {
-      return true;
+      return { success: true };
     } else {
-      return false;
+      return { success: false, error: json.message };
     }
   } catch (error) {
-    console.log(error);
-    return false;
+    return { success: false, error: error.message };
   }
 };

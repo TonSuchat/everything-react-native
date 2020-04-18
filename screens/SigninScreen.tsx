@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
 import { Input, Card, Button, Divider } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { useDispatch } from "react-redux";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useForm } from "react-hook-form";
 import { signin } from "../store/user/actions";
+import { RootState } from "../store";
+import { UserState } from "../store/user/types";
 
 const SigninScreen: React.FC = () => {
   const dispatch = useDispatch();
+  const { signinFetching, error }: UserState = useSelector(
+    (state: RootState) => state.user
+  );
   const { register, handleSubmit, setValue, errors } = useForm();
 
   useEffect(() => {
@@ -21,6 +26,9 @@ const SigninScreen: React.FC = () => {
 
   return (
     <Card>
+      <View style={styles.errorContainer}>
+        <Text style={styles.error}>{error}</Text>
+      </View>
       <Input
         containerStyle={styles.inputContainer}
         label="Email"
@@ -46,6 +54,8 @@ const SigninScreen: React.FC = () => {
         title="Sign In"
         style={styles.button}
         onPress={handleSubmit(onSubmit)}
+        loading={signinFetching}
+        disabled={signinFetching}
       />
       <Divider style={styles.divider} />
       <TouchableOpacity style={styles.textContainer}>
@@ -77,6 +87,10 @@ const styles = StyleSheet.create({
   divider: {
     marginVertical: 5,
     backgroundColor: "gray",
+  },
+  errorContainer: {
+    alignItems: "center",
+    justifyContent: "center",
   },
   error: {
     color: "red",
