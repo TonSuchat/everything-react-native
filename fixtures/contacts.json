@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Arnold Terminator",
+    "phone": "(793)-233-48227",
+    "image": "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    "name": "Diane Banks",
+    "phone": "(793)-233-4817",
+    "image": "https://randomuser.me/api/portraits/women/11.jpg"
+  },
+  {
+    "name": "Michel Scofield",
+    "phone": "(123)-233-11117",
+    "image": "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    "name": "Teddy Bear",
+    "phone": "(793)-233-48237",
+    "image": "https://randomuser.me/api/portraits/men/13.jpg"
+  },
+  {
+    "name": "Christiano Ronaldo",
+    "phone": "(793)-233-4817",
+    "image": "https://randomuser.me/api/portraits/women/14.jpg"
+  },
+  {
+    "name": "David Beckham",
+    "phone": "(793)-233-4817",
+    "image": "https://randomuser.me/api/portraits/men/15.jpg"
+  }
+]
