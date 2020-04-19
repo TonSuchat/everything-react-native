@@ -10,7 +10,9 @@ const AuthNavigators: React.FC = () => {
       <Stack.Screen
         name="Signin"
         component={SigninScreen}
-        options={{ headerTitle: "Sign In" }}
+        options={{
+          headerTitle: "Sign In",
+        }}
       />
     </Stack.Navigator>
   );
