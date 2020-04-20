@@ -7,7 +7,7 @@ import {
   SIGNIN_ERROR,
 } from "./types";
 
-const initialState: UserState = {
+export const initialState: UserState = {
   userToken: "",
   signinFetching: false,
 };
