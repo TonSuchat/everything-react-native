@@ -23,21 +23,3 @@ export const signinApi = async (
     return { success: false, error: error.message };
   }
 };
-
-// export const addContactApi = async (newContact: Contact) => {
-//   try {
-//     const response = await fetch(`${apiServerURL}/contacts`, {
-//       method: "POST",
-//       headers: contentTypeJSONHeader,
-//       body: JSON.stringify(newContact),
-//     });
-//     if (response.ok) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   } catch (error) {
-//     console.log(error);
-//     return false;
-//   }
-// };

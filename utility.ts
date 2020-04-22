@@ -1,5 +1,3 @@
-import { Contact } from "./store/contacts/types";
-
 export const contentTypeJSONHeader = { "Content-Type": "application/json" };
 
 export const toggleDrawer = (navigation) => {
